@@ -13,7 +13,8 @@ group :development, :test do
 end
 gem 'execjs'
 gem 'therubyracer'
-
+gem 'thin'
+gem 'heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
