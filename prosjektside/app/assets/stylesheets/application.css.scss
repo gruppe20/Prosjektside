@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+/* variables at the top! */
+$header_blue: #539afb;
+$light_grey: #e1e1e1;
+$text_grey: #272727;
+$link_hover_back: #98c4ff;
+
+@font-face {
+	font-family: "Frutiger black";
+	src: url("../assets/Frutiger75-Black.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+	font-family: Helvetica;
+}
+
+#wrapper {
+	margin: 5% 10%;
+	text-align: left;
+	min-width: 500px;
+}
+
+#header {
+	height: 100px;
+	background: $header_blue;
+	font-family: "Frutiger black", Helvetica;
+	color: white;
+	padding: 30px 0 0 30px;
+	border-radius: 5px 5px 0 0;
+}
+
+@mixin menu {
+	color: white;
+	background: black;
+	padding: 5px 10px;
+	
+	a {
+		color: white;
+	}
+}
+
+#menu {
+	@include menu;
+}
+
+@mixin content {
+	padding: 10px 10px 50px 10px;
+	background: $light_grey;
+	color: $text_grey;
+	text-shadow: 1px 1px white;
+	border-radius: 0 0 5px 5px;
+	
+	h2 {
+		padding: 3px 0;
+	}
+	
+	a {
+		color: $text_grey;
+	}
+	
+	a:hover {
+		background: $link_hover_back;
+	}
+}
+
+#content {
+	@include content;
+}
