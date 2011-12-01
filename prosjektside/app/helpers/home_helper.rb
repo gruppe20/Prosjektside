@@ -1,5 +1,5 @@
 module HomeHelper
 	def doc_path(file)
-		File.join('/dokumenter', file).to_s
+		File.join('/uploads', file).to_s
 	end
 end
