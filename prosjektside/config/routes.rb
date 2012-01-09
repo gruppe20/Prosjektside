@@ -2,7 +2,24 @@ Prosjektside::Application.routes.draw do
   get "protocol/index"
 
   get "home/index"
-
+  resources :home
+  resources :members
+  
+  root :to => 'home#index'
+  
+  match '/documents' => 'home#documents', :as => :documents
+  
+  
+  match '/protocol' => 'protocol#index', :as => :protocol
+  match '/protocol/:url' => 'protocol#index', :constraints => {:url => /.*/}
+  
+  
+  match '/adm' => 'members#adm'
+  #match '/adm', :controller => 'members', :action => 'adm', :as => :adm
+  
+  #match '/members' => 'members#index'
+  #match '/members/:id' => 'members#new'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,13 +67,6 @@ Prosjektside::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'home#index'
-  
-  match '/documents' => 'home#documents', :as => :documents
-  resources :home
-  
-  match '/protocol' => 'protocol#index', :as => :protocol
-  match '/protocol/:url' => 'protocol#index', :constraints => {:url => /.*/}
 
   # See how all your routes lay out with "rake routes"
 

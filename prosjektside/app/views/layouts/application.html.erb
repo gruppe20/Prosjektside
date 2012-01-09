@@ -8,22 +8,23 @@
 </head>
 <body>
 <div id="wrapper">
-	<div id="top">
-		<div id="header">
-			<h1>Gruppe 20</h1>
-			<h3>Hovedprosjekt våren 2012<h3>
-		</div>
-		<div id="menu">
-			<%= link_to 'Hjem', root_path %>
-			<%= link_to 'Dokumenter', documents_path %>
-			<%= link_to 'Protokoll', protocol_path %>
-		</div>
-	</div>
-	<div id="content">
-		<%= yield %>
-	</div>
-	<div id="footer">
-	</div>
+    <div id="top">
+        <div id="header">
+            <h1>Gruppe 20</h1>
+            <h3>Hovedprosjekt våren 2012<h3>
+        </div>
+        <div id="menu">
+            <%= link_to 'Hjem', root_path %>
+            <%= link_to 'Dokumenter', documents_path %>
+            <%= link_to 'Protokoll', protocol_path %>
+            <%= link_to 'Om oss', members_path %>
+        </div>
+    </div>
+    <div id="content">
+        <%= yield %>
+    </div>
+    <div id="footer">
+    </div>
 </div>
 <!-- Piwik --> 
 <script type="text/javascript">

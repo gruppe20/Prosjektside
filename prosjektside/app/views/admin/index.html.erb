@@ -1,0 +1,25 @@
+
+<p>Admin</p>
+
+<!--
+<form action="j_security_check" method="post">
+    Username: <input type="text" name="j_username">
+    <br>
+    Password: <input type="password" 
+    name="j_password"><br>
+    <br>
+    <input type="submit"><br>
+</form>
+-->
+
+<!-- Funker ikke!!! -->
+<h3>Login</h3>  
+
+<label for="user_login">Login:</label><br/>
+<%= text_field "user", "login", :size => 20 %><br/>
+
+<label for="user_password">Password:</label><br/>
+<%= password_field "user", "password", :size => 20 %><br/>
+
+<%= submit_tag "Submit" %>
+
