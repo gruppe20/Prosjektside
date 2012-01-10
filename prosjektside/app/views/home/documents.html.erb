@@ -4,7 +4,8 @@
 -->
 <% @files = Dir.entries("public/uploads/") %>
 <% @files.each do |file| %>
-    <%if file != "." && file != ".."%>
+    <% if file != "." && file != ".." && File.extname(file) == ".pdf" %>
         <p><%= link_to file.capitalize.gsub(".pdf", ""), doc_path(file) %></p> 
     <% end %>
 <% end %>
+

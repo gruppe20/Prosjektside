@@ -1,31 +1,35 @@
 <h1>Listing members</h1>
 
-<table>
-  <tr>
-    <th>Navn</th>
-    <th>Alder</th>
-    <th>Rolle</th>
-    <th>Bilde</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+
+<table cellspacing="10">
 <% @members.each do |member| %>
-  <tr>
-    <td><%= member.name %></td>
+    <tr>
+        <th rowspan="3"><%= image_tag uploads_path(member.pic), :size => "100x150" %></th>
+        <td>Navn: </td>
+        <td><%= member.name %></td>
+    </tr>
+    <tr>
+        <td>Alder: </td>
+        <td><%= member.age %></td>
+    </tr>
+    <tr>
+        <td>Rolle: </td>
+        <td><%= member.role %></td>
+    </tr>
+    <!--<td><%= member.name %></td>
     <td><%= member.age %></td>
     <td><%= member.role %></td>
     <td><%= member.pic %></td>
-    <!--
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
-    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
     -->
-  </tr>
+    <tr>
+        <td><%= link_to 'Vis', member %></td>
+        <td><%= link_to 'Rediger', edit_member_path(member) %></td>
+        <td><%= link_to 'Slett', member, confirm: 'Er du sikker?', method: :delete %></td>
+    </tr>
+
 <% end %>
 </table>
-
 <br />
-
+<p><%= link_to "Legg til medlem", new_member_path %></p>
 <%= link_to 'Administrer', adm_path %>
