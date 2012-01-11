@@ -4,5 +4,7 @@ class AdminController < ApplicationController
     def index
         
     end
-
+    def about
+    	@members = Member.all
+    end
 end

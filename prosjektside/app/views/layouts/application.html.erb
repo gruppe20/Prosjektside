@@ -20,6 +20,12 @@
             <%= link_to 'Om oss', members_path %>
         </div>
     </div>
+    <div class="sidemenu">
+        <!-- Hvis logget inn - vis sidemenyen -->
+        <% if true %>
+            <%= render 'admin/sidemenu' %>
+        <% end %>
+    </div>
     <div id="content">
         <%= yield %>
     </div>
