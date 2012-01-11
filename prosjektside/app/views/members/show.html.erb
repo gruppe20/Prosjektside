@@ -17,9 +17,9 @@
 
 <p>
   <b>Pic:</b>
-  <%= @member.pic %>
+  <%= image_tag uploads_path(@member.pic), :size => "100x150" %>
 </p>
 
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+<%= link_to 'Rediger', edit_member_path(@member) %> |
+<%= link_to 'Tilbake', members_path %>

@@ -1,4 +1,4 @@
-<%= form_for(@member) do |f| %>
+<%= form_for(@member, :html => {:multipart => true}) do |f| %>
   <% if @member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
@@ -12,20 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Navn" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :age %><br />
+    <%= f.label :age, "Alder" %><br />
     <%= f.number_field :age %>
   </div>
   <div class="field">
-    <%= f.label :role %><br />
+    <%= f.label :role, "Rolle" %><br />
     <%= f.text_field :role %>
   </div>
   <div class="field">
-    <%= f.label :pic %><br />
-    <%= f.text_field :pic %>
+    <%= f.label :pic, "Bilde" %><br />  
+    <!-- Upload file and invoke "load_photo_file" method in the Controller to process the upload file -->
+    <%= f.file_field :load_photo_file, :accept => 'image/png,image/gif,image/jpeg' %>
   </div>
   <div class="actions">
     <%= f.submit %>
