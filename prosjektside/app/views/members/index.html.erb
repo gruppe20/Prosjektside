@@ -1,4 +1,4 @@
-<h1>Listing members</h1>
+<h1>Liste over medlemmer</h1>
 
 
 <table cellspacing="10">
@@ -17,14 +17,7 @@
         <td>Rolle: </td>
         <td><%= member.role %></td>
     </tr>
-    <tr>
-        <td><%= link_to 'Vis', member %></td>
-        <td><%= link_to 'Rediger', edit_member_path(member) %></td>
-        <td><%= link_to 'Slett', member, confirm: 'Er du sikker?', method: :delete %></td>
-    </tr>
 </div>
 <% end %>
 </table>
 <br />
-<p><%= link_to "Legg til medlem", new_member_path %></p>
-<%= link_to 'Administrer', adm_path %>
