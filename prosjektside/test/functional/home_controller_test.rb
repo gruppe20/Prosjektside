@@ -5,5 +5,10 @@ class HomeControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
+  
+  test "should get documents" do
+  	get :documents
+  	assert_response :success
+  end
 
 end
