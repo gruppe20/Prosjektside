@@ -2,19 +2,22 @@ Prosjektside::Application.routes.draw do
   get "protocol/index"
 
   get "home/index"
-  get "admin/index"
   resources :home
   resources :members
-  resources :admin 
+
   
   root :to => 'home#index'
   
   match '/documents' => 'home#documents', :as => :documents
   match '/about_admin' => 'admin#about'
+  match '/documents_admin' => 'admin#documents'
   
   match '/protocol' => 'protocol#index', :as => :protocol
   match '/protocol/:url' => 'protocol#index', :constraints => {:url => /.*/}
   
+  match '/admin' => 'admin#index'
+	
+  match 'public/uploads' => 'admin#index'	
   
   #match '/adm' => 'members#adm'
   #match '/adm', :controller => 'members', :action => 'adm', :as => :adm

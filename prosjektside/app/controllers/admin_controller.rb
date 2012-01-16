@@ -4,7 +4,27 @@ class AdminController < ApplicationController
     def index
         
     end
+    
     def about
     	@members = Member.all
     end
+    
+    def documents
+		@uploads = Dir.glob("public/uploads/*")
+		for file in @uploads
+			puts file
+		end
+	end
+	
+	def destroy
+    #@member = Member.find(params[:id])
+   # @uploads.destroy
+
+    #respond_to do |format|
+     # format.html { redirect_to admin_url }
+      #format.json { head :ok }
+    #end
+  end
+	
+	
 end
