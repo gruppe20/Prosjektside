@@ -1,19 +1,20 @@
 class AdminController < ApplicationController
     #http_basic_authenticate_with :name => "gruppe20", :password => "test", :except => :index
     #before_filter :basic_http_authentication
-    def index
+  def index
         
-    end
+  end
     
-    def about
-    	@members = Member.all
-    end
+  def about
+    @members = Member.all
+  end
     
-    def documents
+  def documents
+    @documents = Document.all
 		@uploads = Dir.glob("public/uploads/*")
 		for file in @uploads
 			puts file
-		end
+    end
 	end
 	
 	def destroy

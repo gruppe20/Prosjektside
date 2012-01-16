@@ -4,13 +4,13 @@ Prosjektside::Application.routes.draw do
   get "home/index"
   resources :home
   resources :members
-
+  resources :documents
   
   root :to => 'home#index'
   
-  match '/documents' => 'home#documents', :as => :documents
+  match '/homedocs' => 'home#documents'
   match '/about_admin' => 'admin#about'
-  match '/documents_admin' => 'admin#documents'
+  #match '/documents_admin' => 'admin#documents'
   
   match '/protocol' => 'protocol#index', :as => :protocol
   match '/protocol/:url' => 'protocol#index', :constraints => {:url => /.*/}

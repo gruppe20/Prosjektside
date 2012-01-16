@@ -1,31 +1,17 @@
 <h1>Administrer dokumenter</h1>
 <br />
 <br />
-<%= form_tag(@upload_file, :html => {:multipart => true}) do |f| %>
-<f.label for="upload">Velg fil for opplastning</label>
-<br />
-<br />
-
-<%= file_field :upload_file, :accept => 'file/png,file/gif,file/jpeg,file/pdf,file/doc,file/docx,file/,file/zip,file/txt,file/html,file/xhtml'  %>
-<br />
-<br />
-<%= submit_tag "Lagre fil" %>
-<% end %>
-<br />
-<br />
-<br />
-
 <% if @uploads.blank? %>
-<p>Ingen dokumenter i databasen</p>
+	<p>Ingen dokumenter i databasen</p>
 <% else %>
-<p>Følgende dokumenter finnes:</p>
-<ul id="documents">
-<% @uploads.each do |c| %>
-<li><%= link_to c -%>
-<%= link_to '     Destroy', c, confirm: 'Are you sure?', method: :delete %>
-</li>
-<% end %>
-</ul>
+	<p>Følgende dokumenter finnes:</p>
+	<ul id="documents">
+		<% @uploads.each do |c| %>
+			<li>
+				<%= link_to c -%>
+			</li>
+		<% end %>
+	</ul>
 <% end %>
 
 

@@ -2,10 +2,17 @@
 <!--
 <%= link_to "Prosjektskisse", doc_path("Prosjektskisse.pdf") %>
 -->
-<% @files = Dir.entries("public/uploads/") %>
-<% @files.each do |file| %>
-    <% if file != "." && file != ".." && File.extname(file) == ".pdf" %>
-        <p><%= link_to file.capitalize.gsub(".pdf", ""), doc_path(file) %></p> 
-    <% end %>
+<table>
+<% @documents.each do |document| %>
+
+  <tr>
+  	<% if document.title.empty? %>
+  		<th><%= link_to document.doc.gsub(".pdf", "").split("/")[1].capitalize, doc_path(document.doc) %></td>
+  	<% else %>
+  		<th><%= link_to document.title, doc_path(document.doc) %></td>
+  	<% end %>
+  </tr>
+
 <% end %>
 
+</table>
