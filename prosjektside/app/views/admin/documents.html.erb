@@ -1,0 +1,17 @@
+<h1>Administrer dokumenter</h1>
+<br />
+<br />
+<% if @uploads.blank? %>
+	<p>Ingen dokumenter i databasen</p>
+<% else %>
+	<p>Følgende dokumenter finnes:</p>
+	<ul id="documents">
+		<% @uploads.each do |c| %>
+			<li>
+				<%= link_to c -%>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+
