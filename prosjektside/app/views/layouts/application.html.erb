@@ -12,6 +12,13 @@
         <div id="header">
             <h1>Gruppe 20</h1>
             <h3>Hovedprosjekt våren 2012<h3>
+			<div id="login_logout">
+				<% if current_user %>
+					<a href="/log_out">Logg ut</a>
+				<% else %>
+					<a href="/log_in">Logg inn</a>
+				<% end %>
+			</div>
         </div>
         <div id="menu">
             <%= link_to 'Hjem', root_path %>
@@ -19,13 +26,14 @@
             <%= link_to 'Protokoll', protocol_path %>
             <%= link_to 'Om oss', members_path %>
         </div>
+		<% if current_user %>
+	    <div class="sidemenu">
+	        <!-- Hvis logget inn - vis sidemenyen -->
+	            <%= render 'admin/sidemenu' %>
+	    </div>
+		<% end %>
     </div>
-	<% if current_user %>
-    <div class="sidemenu">
-        <!-- Hvis logget inn - vis sidemenyen -->
-            <%= render 'admin/sidemenu' %>
-    </div>
-	<% end %>
+	
     <div id="content">
         <%= yield %>
     </div>

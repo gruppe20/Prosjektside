@@ -1,7 +1,6 @@
 class MembersController < ApplicationController
-  #http_basic_authenticate_with :name => "gruppe20", :password => "test", :except => :index
   before_filter :find_mem, :only => [:show, :edit, :update, :destroy]
-  #before_filter :authenticate, :except => :index
+  before_filter :logged_in
 
   
   def find_mem

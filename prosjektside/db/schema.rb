@@ -11,16 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120116114647) do
+ActiveRecord::Schema.define(:version => 20120116122824) do
 
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.string   "doc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "doku_admins", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,10 +29,10 @@ ActiveRecord::Schema.define(:version => 20120116114647) do
     t.datetime "updated_at"
   end
 
-  create_table "upload_files", :force => true do |t|
-    t.string   "name"
-    t.string   "title"
-    t.string   "content"
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

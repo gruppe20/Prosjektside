@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  before_filter :logged_in 
+    
   # GET /documents
   # GET /documents.json
   def index
