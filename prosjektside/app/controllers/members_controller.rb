@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   before_filter :find_mem, :only => [:show, :edit, :update, :destroy]
   before_filter :logged_in, :except=>[:index]
-  #Noe
+  
 
 
   
