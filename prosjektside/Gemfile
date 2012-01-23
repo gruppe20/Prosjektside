@@ -17,7 +17,7 @@ gem "nokogiri", "~> 1.5.0"
 # For password encryption
 gem "bcrypt-ruby", :require => "bcrypt"
 
-gem "ruby-debug19"
+#gem "ruby-debug19"
 
 # Gems used only for assets and not required
 # in production environments by default.
