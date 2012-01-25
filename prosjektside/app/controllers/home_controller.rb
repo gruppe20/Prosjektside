@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 	require 'find'
+	require 'net/ftp'
   def index
   end
 

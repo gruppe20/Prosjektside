@@ -5,7 +5,7 @@
 <% @members.each do |member| %>
 <div class="mem">
     <tr>
-        <th rowspan="3"><%= image_tag uploads_path(member.pic), :size => "100x150" %></th>
+        <th rowspan="3"><%= image_tag "http://#{member.pic}", :size => "100x150" %></th>
         <td>Navn: </td>
         <td><%= member.name %></td>
     </tr>
