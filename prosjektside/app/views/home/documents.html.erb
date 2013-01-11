@@ -7,7 +7,7 @@
 
   <tr>
   	<% if document.title.empty? %>
-  		<th><%= link_to document.doc.gsub(".pdf", "").split("/")[1].capitalize, "http://#{document.doc}" %></td>
+  		<th><%= link_to document.doc.gsub(".pdf", "").split("/")[3].capitalize, "http://#{document.doc}" %></td>
   	<% else %>
   		<th><%= link_to document.title, "http://#{document.doc}" %></td>
   	<% end %>
